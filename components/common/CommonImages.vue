@@ -3,12 +3,12 @@
     source(
       :srcset='require(`@/assets/images/sp/${src}.${type}?webp`)',
       type='image/webp',
-      media='(max-width: 750px)'
+      :media='`(max-width: ${SP_WIDTH}px)`'
     )
     source(
       :srcset='require(`@/assets/images/sp/${src}.${type}`)',
       :alt='alt',
-      media='(max-width: 750px)'
+      :media='`(max-width: ${SP_WIDTH}px)`'
     )
     source(
       :srcset='require(`@/assets/images/pc/${src}.${type}?webp`)',
@@ -23,6 +23,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import { SP_WIDTH } from '~/assets/scripts/variables'
 
 export default Vue.extend({
   props: {
@@ -38,6 +39,11 @@ export default Vue.extend({
       type: String,
       default: 'png',
     },
+  },
+  data() {
+    return {
+      SP_WIDTH,
+    }
   },
 })
 </script>
