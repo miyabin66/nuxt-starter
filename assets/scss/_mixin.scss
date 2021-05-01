@@ -1,0 +1,69 @@
+@mixin pc-layout {
+  @media (min-width: $sp-max-width + 1) {
+    @content;
+  }
+}
+
+@mixin sp-layout {
+  @media (max-width: $sp-max-width) {
+    @content;
+  }
+}
+
+@mixin image($path, $width, $height, $type: 'png', $scale: $design-scale) {
+  width: $width / $scale * 1px;
+  height: $height / $scale * 1px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+  @media (min-width: $sp-max-width + 1) {
+    background-image: image-url('pc/' + $path + '.' + $type);
+  }
+
+  @media (max-width: $sp-max-width) {
+    background-image: image-url('sp/' + $path + '.' + $type);
+  }
+}
+
+@mixin vw-image($path, $width, $height, $type: 'png', $scale: $design-scale) {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+  @media (min-width: $sp-max-width + 1) {
+    width: pc-convert($width / $scale);
+    height: pc-convert($height / $scale);
+    background-image: image-url('pc/' + $path + '.' + $type);
+  }
+
+  @media (max-width: $sp-max-width) {
+    width: sp-convert($width / $scale);
+    height: sp-convert($height / $scale);
+    background-image: image-url('sp/' + $path + '.' + $type);
+  }
+}
+
+@mixin absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin text ($font-size, $line-height, $scale: $design-scale) {
+  font-size: $font-size / $scale * 1px;
+  line-height: $line-height;
+}
+
+@mixin vw-text ($font-size, $line-height, $scale: $design-scale) {
+  line-height: $line-height;
+
+  @media (min-width: $sp-max-width + 1) {
+    font-size: pc-convert($font-size / $scale);
+  }
+
+  @media (max-width: $sp-max-width) {
+    font-size: sp-convert($font-size / $scale);
+  }
+}

@@ -1,0 +1,13 @@
+@import "variables";
+
+@function image-url($path) {
+  @return url('~assets/images/#{$path}');
+}
+
+@function pc-convert($px, $width: $pc-convert-width) {
+  @return (100vw * $px / $width);
+}
+
+@function sp-convert($px, $width: $sp-convert-width) {
+  @return (100vw * $px / $width);
+}
