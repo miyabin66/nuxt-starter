@@ -77,6 +77,22 @@ export default {
 
   optimizedImages: {
     optimizeImages: true,
+    mozjpeg: {
+      quality: 50,
+    },
+    pngquant: {
+      quality: [0.3, 0.5],
+    },
+    svgo: {
+      options: {
+        multipass: true,
+        datauri: 'enc',
+        js2svg: {
+          indent: 2,
+          pretty: true,
+        },
+      },
+    },
   },
 
   generate: {
