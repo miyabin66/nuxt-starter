@@ -96,6 +96,9 @@ export default {
         },
       },
     },
+    webp: {
+      quality: 50,
+    },
   },
 
   generate: {
