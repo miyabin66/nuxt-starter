@@ -82,6 +82,10 @@ export default {
     pngquant: {
       quality: [0.3, 0.5],
     },
+    gifsicle: {
+      interlaced: true,
+      optimizationLevel: 3,
+    },
     svgo: {
       options: {
         multipass: true,
