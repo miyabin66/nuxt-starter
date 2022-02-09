@@ -7,6 +7,7 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
+    "serve": "yarn generate && serve ./public",
     "lint:js": "eslint --ext .ts,.js,.vue --ignore-path .eslintignore . --fix",
     "lint:style": "stylelint **/*.{vue,css,scss} --ignore-path .eslintignore --fix",
     "lint": "yarn lint:js && yarn lint:style"
@@ -50,6 +51,7 @@
     "pug-plain-loader": "^1.1.0",
     "sass": "^1.32.12",
     "sass-loader": "10.1.1",
+    "serve": "^13.0.2",
     "stylelint": "^13.9.0",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-standard": "^20.0.0",
