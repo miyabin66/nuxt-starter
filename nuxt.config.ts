@@ -101,13 +101,13 @@ export default {
     '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/stylelint
     '@nuxtjs/stylelint-module',
-    '@aceforth/nuxt-optimized-images',
-    GA_ID && [
-      '@nuxtjs/google-analytics',
-      {
-        id: GA_ID,
-      },
-    ],
+    // '@aceforth/nuxt-optimized-images',
+    // GA_ID && [
+    //   '@nuxtjs/google-analytics',
+    //   {
+    //     id: GA_ID,
+    //   },
+    // ],
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules

@@ -122,6 +122,7 @@ jobs:
           git config --local user.email "githubactions@example.com"
           git config --local user.name "github actions"
           git config --local pull.rebase false
+
       - name: Get yarn cache directory path 🛠
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn cache dir)"
@@ -134,11 +135,13 @@ jobs:
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
+
       - name: Merge branch 💡
         run: |
           git checkout $STAGING
           git fetch origin $STAGING
           git merge $DEVELOP --no-ff -m "merge $DEVELOP"
+
       - name: Install modules 🧶
         run: yarn
 
@@ -151,6 +154,7 @@ jobs:
           git commit -m "build: nuxt generate" || true
           git pull origin $STAGING
           git push -f origin $STAGING
+
       - name: Auto generate failed notification 📩
         uses: miyabin66/ganotify@main
         if: failure()  # 失敗した時にSlackへ通知
