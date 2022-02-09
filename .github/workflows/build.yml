@@ -64,20 +64,16 @@ jobs:
       - name: Install modules 🧶
         run: yarn
 
-      # env
-      - name: Get Env Values
+      - name: Get Environment Variables From .env.json
         id: nuxt_public
         run: |
           echo "::set-output name=env::$(cat .env.json | tr -d '\n')"
 
-      - name: Get Environment Variables for Application
+      - name: Set Environment Variables In $GITHUB_ENV
         run: |
           echo "BASE_URL=${{ fromJson(steps.nuxt_public.outputs.env)[env.BASE_BRANCH].BASE_URL }}" >> $GITHUB_ENV
           echo "GA_ID=${{ fromJson(steps.nuxt_public.outputs.env)[env.BASE_BRANCH].GA_ID }}" >> $GITHUB_ENV
           echo "GTM_ID=${{ fromJson(steps.nuxt_public.outputs.env)[env.BASE_BRANCH].GTM_ID }}" >> $GITHUB_ENV
-
-      - name: log
-        run: echo $GITHUB_ENV
 
       - name: Build 🔨
         run: $BUILD
@@ -88,75 +84,6 @@ jobs:
           git commit -m "build: automatic build" || true
           git pull origin $BUILD_BRANCH
           git push -f origin $BUILD_BRANCH
-
-# name: CI generate
-
-# env:
-#   DEVELOP: develop
-#   STAGING: main
-
-# on:
-#   push:
-#     branches:
-#       - develop
-
-# jobs:
-#   generate:
-#     runs-on: ${{ matrix.os }}
-
-#     strategy:
-#       matrix:
-#         os: [ubuntu-latest]
-#         node: [14]
-
-#     steps:
-#       - name: Checkout 🛎
-#         uses: actions/checkout@v2
-#         with:
-#           fetch-depth: 0
-
-#       - name: Setup node env 🏗
-#         uses: actions/setup-node@v2.1.5
-#         with:
-#           node-version: ${{ matrix.node }}
-
-#       - name: Setup config 📝
-#         run: |
-#           git config --local user.email "githubactions@example.com"
-#           git config --local user.name "github actions"
-#           git config --local pull.rebase false
-
-#       - name: Get yarn cache directory path 🛠
-#         id: yarn-cache-dir-path
-#         run: echo "::set-output name=dir::$(yarn cache dir)"
-
-#       - name: Cache node_modules 📦
-#         uses: actions/cache@v2.1.5
-#         id: yarn-cache
-#         with:
-#           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-#           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-#           restore-keys: |
-#             ${{ runner.os }}-yarn-
-
-#       - name: Merge branch 💡
-#         run: |
-#           git checkout $STAGING
-#           git fetch origin $STAGING
-#           git merge $DEVELOP --no-ff -m "merge $DEVELOP"
-
-#       - name: Install modules 🧶
-#         run: yarn
-
-#       - name: Generate files 🔨
-#         run: yarn generate
-
-#       - name: Push generate files 📨
-#         run: |
-#           git add .
-#           git commit -m "build: nuxt generate" || true
-#           git pull origin $STAGING
-#           git push -f origin $STAGING
 
       - name: Auto generate failed notification 📩
         uses: miyabin66/ganotify@main
