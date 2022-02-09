@@ -72,9 +72,9 @@ jobs:
 
       - name: Get Environment Variables for Application
         run: |
-          echo "BASE_URL=${{ fromJson(steps.next_public.outputs.env)[env.BASE_BRANCH].BASE_URL }}" >> $GITHUB_ENV
-          echo "GA_ID=${{ fromJson(steps.next_public.outputs.env)[env.BASE_BRANCH].GA_ID }}" >> $GITHUB_ENV
-          echo "GTM_ID=${{ fromJson(steps.next_public.outputs.env)[env.BASE_BRANCH].GTM_ID }}" >> $GITHUB_ENV
+          echo "BASE_URL=${{ fromJson(steps.nuxt_public.outputs.env)[env.BASE_BRANCH].BASE_URL }}" >> $GITHUB_ENV
+          echo "GA_ID=${{ fromJson(steps.nuxt_public.outputs.env)[env.BASE_BRANCH].GA_ID }}" >> $GITHUB_ENV
+          echo "GTM_ID=${{ fromJson(steps.nuxt_public.outputs.env)[env.BASE_BRANCH].GTM_ID }}" >> $GITHUB_ENV
 
       - name: Build 🔨
         run: $BUILD
