@@ -65,7 +65,7 @@ jobs:
         run: yarn
 
       # env
-      - name: get env file
+      - name: Get Env Values
         id: nuxt_public
         run: |
           echo "::set-output name=env::$(cat .env.json | tr -d '\n')"
@@ -75,6 +75,9 @@ jobs:
           echo "BASE_URL=${{ fromJson(steps.nuxt_public.outputs.env)[env.BASE_BRANCH].BASE_URL }}" >> $GITHUB_ENV
           echo "GA_ID=${{ fromJson(steps.nuxt_public.outputs.env)[env.BASE_BRANCH].GA_ID }}" >> $GITHUB_ENV
           echo "GTM_ID=${{ fromJson(steps.nuxt_public.outputs.env)[env.BASE_BRANCH].GTM_ID }}" >> $GITHUB_ENV
+
+      - name: log
+        run: echo $GITHUB_ENV
 
       - name: Build 🔨
         run: $BUILD
