@@ -73,7 +73,6 @@ export default {
         type: meta.faviconType,
         href: meta.faviconPath,
       },
-      { hid: 'canonical', rel: 'canonical', href: meta.url },
       meta.appleTouchIconPath && {
         hid: 'apple-touch-icon',
         rel: 'apple-touch-icon',
