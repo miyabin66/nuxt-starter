@@ -1,6 +1,3 @@
-import Fiber from 'fibers'
-import Sass from 'sass'
-
 const BASE_URL = process.env.BASE_URL || 'http://localhost:3000'
 const GA_ID = process.env.GA_ID || 'null'
 
@@ -132,14 +129,6 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    loaders: {
-      scss: {
-        implementation: Sass,
-        sassOptions: {
-          fiber: Fiber,
-        },
-      },
-    },
     babel: {
       plugins: [['@babel/plugin-proposal-private-methods', { loose: true }]],
     },
