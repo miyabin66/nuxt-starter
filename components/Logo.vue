@@ -1,5 +1,5 @@
 <template lang="pug">
-  CommonImages.NuxtLogo(:src='"logo"')
+  Pictures.NuxtLogo(:src='"logo"')
 </template>
 
 <style lang="scss" scoped>
