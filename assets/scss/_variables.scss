@@ -1,5 +1,6 @@
-$vw-pc-width: 2560 / 2;
-$vw-sp-width: 750 / 2;
+@use 'sass:math';
+$vw-pc-width: math.div(2560, 2);
+$vw-sp-width: math.div(750, 2);
 $pc-width: $vw-pc-width * 1px;
 $sp-width: $vw-sp-width * 1px;
 $sp-max-width: 750px;
