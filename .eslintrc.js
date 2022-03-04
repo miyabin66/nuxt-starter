@@ -4,17 +4,12 @@ module.exports = {
     browser: true,
     node: true,
   },
-  parserOptions: {
-    parser: '@typescript-eslint/parser',
-  },
   extends: [
     '@nuxtjs/eslint-config-typescript',
-    'prettier',
-    'prettier/vue',
-    'plugin:prettier/recommended',
     'plugin:nuxt/recommended',
+    'prettier',
   ],
-  plugins: ['prettier', 'vuejs-accessibility'],
+  plugins: ['vuejs-accessibility'],
   // add your custom rules here
   rules: {},
 }
