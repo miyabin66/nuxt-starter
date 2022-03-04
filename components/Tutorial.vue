@@ -61,7 +61,7 @@
         p(
           class="mt-3 text-gray-600"
         )
-          | We recommend you take a look at the
+          | We recommend you take a look at the&nbsp;
           a(
             href="https://nuxtjs.org"
             target="_blank"
@@ -72,12 +72,12 @@
         p(
           class="mt-4 pt-4 text-gray-800 border-t border-dashed"
         )
-          | To get started, remove
+          | To get started, remove&nbsp;
           code(
             class="bg-gray-100 text-sm p-1 rounded border"
           )
             | components/Tutorial.vue
-          | and start coding in
+          | &nbsp;and start coding in&nbsp;
           code(
             class="bg-gray-100 text-sm p-1 rounded border"
           )
