@@ -87,7 +87,7 @@ jobs:
 
       - name: Auto generate failed notification 📩
         uses: miyabin66/ganotify@main
-        if: failure()  # 失敗した時にSlackへ通知
+        if: failure() # 失敗した時にSlackへ通知
         with:
           type: ${{ job.status }} # jobの成否を代入(Failure/Success)
           job_name: '*Auto Nuxt Generate* ${{ job.status }}'

@@ -1,4 +1,4 @@
-@import "variables";
+@import 'variables';
 
 @function image-url($path) {
   @return url('~/assets/images/#{$path}');

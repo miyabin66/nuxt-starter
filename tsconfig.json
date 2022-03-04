@@ -16,7 +16,7 @@
       "@/*": ["./*"]
     },
     "types": ["@nuxt/types", "@nuxtjs/axios", "@types/node"],
-    "rootDirs": ["."],
+    "rootDirs": ["."]
   },
   "exclude": ["node_modules", ".nuxt", "dist"]
 }

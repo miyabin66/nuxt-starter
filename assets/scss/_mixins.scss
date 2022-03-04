@@ -51,13 +51,23 @@
   transform: translate(-50%, -50%);
 }
 
-@mixin text ($font-size, $line-height: normal, $letter-spacing: normal, $scale: $design-scale) {
+@mixin text(
+  $font-size,
+  $line-height: normal,
+  $letter-spacing: normal,
+  $scale: $design-scale
+) {
   font-size: $font-size / $scale * 1px;
   line-height: $line-height;
   letter-spacing: $letter-spacing;
 }
 
-@mixin vw-text ($font-size, $line-height: normal, $letter-spacing: normal, $scale: $design-scale) {
+@mixin vw-text(
+  $font-size,
+  $line-height: normal,
+  $letter-spacing: normal,
+  $scale: $design-scale
+) {
   line-height: $line-height;
   letter-spacing: $letter-spacing;
 
