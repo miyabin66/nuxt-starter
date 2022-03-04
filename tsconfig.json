@@ -10,25 +10,13 @@
     "strict": true,
     "noEmit": true,
     "experimentalDecorators": true,
-    "rootDirs": ["."],
     "baseUrl": ".",
     "paths": {
-      "~/*": [
-        "./*"
-      ],
-      "@/*": [
-        "./*"
-      ]
+      "~/*": ["./*"],
+      "@/*": ["./*"]
     },
-    "types": [
-      "@nuxt/types",
-      "@nuxtjs/axios",
-      "@types/node"
-    ]
+    "types": ["@nuxt/types", "@nuxtjs/axios", "@types/node"],
+    "rootDirs": ["."],
   },
-  "exclude": [
-    "node_modules",
-    ".nuxt",
-    "dist"
-  ]
+  "exclude": ["node_modules", ".nuxt", "dist"]
 }

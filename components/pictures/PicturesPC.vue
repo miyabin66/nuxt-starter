@@ -1,5 +1,5 @@
 <template lang="pug">
-  picture
+  picture(v-if='src')
     source(
       :srcset='require(`@/assets/images/pc/${src}.${type}?webp`)',
       type='image/webp'
