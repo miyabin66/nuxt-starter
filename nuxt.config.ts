@@ -32,6 +32,11 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: meta.description },
+      {
+        hid: 'format-detection',
+        name: 'format-detection',
+        content: 'telephone=no',
+      },
       { hid: 'keywords', name: 'keywords', content: meta.keywords },
 
       { hid: 'og:url', property: 'og:url', content: meta.url },
@@ -125,7 +130,10 @@ export default {
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
+    baseURL: '/',
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
