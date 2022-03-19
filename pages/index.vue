@@ -1,5 +1,5 @@
-<template>
-  <Tutorial />
+<template lang="pug">
+  Tutorial
 </template>
 
 <script lang="ts">
