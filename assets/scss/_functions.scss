@@ -1,13 +1,17 @@
-@import 'variables';
+@import "variables";
 
 @function image-url($path) {
-  @return url('~/assets/images/#{$path}');
+  @return url('~assets/images/#{$path}');
 }
 
-@function vw-pc($px, $width: $vw-pc-width) {
-  @return (100vw * $px / $width);
+@function px($px, $size: $design-scale) {
+  @return ($px / $size * 1px);
 }
 
-@function vw-sp($px, $width: $vw-sp-width) {
-  @return (100vw * $px / $width);
+@function vw-pc($px, $width: $vw-pc-width, $size: $design-scale) {
+  @return (100vw * $px / $width / $size);
+}
+
+@function vw-sp($px, $width: $vw-sp-width, $size: $design-scale) {
+  @return (100vw * $px / $width / $size);
 }
