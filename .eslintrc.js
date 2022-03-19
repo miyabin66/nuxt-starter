@@ -11,5 +11,7 @@ module.exports = {
   ],
   plugins: ['vuejs-accessibility'],
   // add your custom rules here
-  rules: {},
+  rules: {
+    'vue/multi-word-component-names': 'off',
+  },
 }
