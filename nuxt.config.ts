@@ -14,7 +14,6 @@ const meta = {
   keywords: [].join(),
   basePath: '/',
   url: BASE_URL,
-  ogImage: OG_IMAGE,
   faviconPath: '/favicon.ico',
   faviconType: 'image/x-icon',
   appleTouchIconPath: '',
@@ -42,7 +41,7 @@ export default {
       { hid: 'keywords', name: 'keywords', content: meta.keywords },
 
       { hid: 'og:url', property: 'og:url', content: meta.url },
-      { hid: 'og:image', property: 'og:image', content: meta.url },
+      { hid: 'og:image', property: 'og:image', content: meta.image },
       { hid: 'og:title', property: 'og:title', content: meta.title },
       {
         hid: 'og:description',
@@ -56,7 +55,7 @@ export default {
         property: 'twitter:description',
         content: meta.description,
       },
-      { hid: 'twitter:image', property: 'twitter:image', content: meta.url },
+      { hid: 'twitter:image', property: 'twitter:image', content: meta.image },
       { hid: 'twitter:card', property: 'twitter:card', content: meta.card },
 
       meta.applicationName && {
