@@ -1,4 +1,3 @@
-@use 'sass:math';
 $vw-pc-width: math.div(2560, 2);
 $vw-sp-width: math.div(750, 2);
 $pc-width: $vw-pc-width * 1px;
