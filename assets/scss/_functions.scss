@@ -5,13 +5,13 @@
 }
 
 @function px($px, $size: $design-scale) {
-  @return ($px / $size * 1px);
+  @return (math.div($px, $size) * 1px);
 }
 
 @function vw-pc($px, $width: $vw-pc-width, $size: $design-scale) {
-  @return (100vw * $px / $width / $size);
+  @return (100vw * math.div(math.div($px, $size), $size));
 }
 
 @function vw-sp($px, $width: $vw-sp-width, $size: $design-scale) {
-  @return (100vw * $px / $width / $size);
+  @return (100vw * math.div(math.div($px, $size), $size));
 }
