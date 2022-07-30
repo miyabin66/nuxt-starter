@@ -81,7 +81,7 @@
 }
 
 @mixin text($font-size, $line-height, $letter-spacing, $text-align: center) {
-  font-size: $font-size / $design-scale;
+  font-size: math.div($font-size, $design-scale);
   line-height: $line-height;
   letter-spacing: $letter-spacing * 1em;
   text-align: $text-align;
