@@ -1,7 +1,8 @@
 {
   "name": "nuxt-starter",
   "version": "1.0.0",
-  "private": true,
+  "author": "miyabin66",
+  "license": "UNLICENSED",
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
